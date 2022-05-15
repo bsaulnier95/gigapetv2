@@ -1,50 +1,26 @@
-
-require_relative 'hunger'
-require_relative 'energy'
-require_relative 'fun'
-require_relative 'affection'
-require_relative 'mood'
-
 class Dragon
-  attr_reader :hunger, :energy, :fun, :affection, :mood
-     
+     attr_reader :mood, :hunger, :energy, :fun, :affection
+    def initialize() 
+      @hunger = rand(1..10)
+      @energy = rand(1..10)
+      @fun = rand(1..10)
+      @affection = rand(1..10)
+    end
     
-    def hunger
-      rand(1..10)
-    end
-
-
-
-    def energy
-       rand(1..10)
-    end
-
-
-
-    def fun
-       rand(1..10)
-    end 
-
-
-
-    def affection
-       rand(1..10)
-    end
-
 
     def mood
-      if hunger > 5
+
+      if @hunger > 5
         "Bad Mood"
-      elsif energy < 5
-        "Bad Mood"
-      elsif fun < 5 or affection < 5
-        "I'm ok"
       else
         "Good Mood"
       end
     end
 
-    end
+  end
+
+
+  
 
 
 

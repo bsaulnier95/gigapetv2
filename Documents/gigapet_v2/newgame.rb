@@ -9,29 +9,32 @@ end
 
 def game
     loop do 
-    return welcome
-    return user_input
-    return stat_adjustments
+    welcome
+    user_input
+    stat_adjustments
     break if @user_input == "Quit"
+    end
 end
 
 
 def welcome
-    print "Hello!"
-    print "Here is the current state of your Dragon:" 
-    print "Hunger: #{dragon.hunger} "
-    print "Energy: #{dragon.energy} "
-    print "Fun: #{dragon.fun} "
-    print "Affection: #{dragon.affection} "
-    print "Mood Report: #{dragon.mood}"
+    print "Howdy!\n"
+    sleep(2)
+    print "Here is the current state of your Dragon:\n" 
+    print "Hunger: #{@dragon.hunger} \n"
+    print "Energy: #{@dragon.energy} \n"
+    print "Fun: #{@dragon.fun} \n"
+    print "Affection: #{@dragon.affection} \n"
+    print "Mood Report: #{@dragon.mood}\n"
 
 end
 
 def user_input
-    print "How would you like to interact with your dragon?"
-    print "Feed, Sleep, Play, Pet, or Quit"
-    print "Input:  "
-    @user_input = gets.capitalize.chomp
+    print "How would you like to interact with your dragon?\n"
+    sleep(2)
+    print "Feed, Sleep, Play, Pet, or Quit\n"
+    print "Input: \n "
+    @user_input = gets.capitalize.chomp!
     if @user_input == "Quit"
         "Thank you for playing! See you next time!"
       exit!
@@ -39,16 +42,16 @@ def user_input
 end
 
 def stat_adjustments
-    print "New Dragon Stats: "
-    print "Hunger: #{dragon.hunger} "
-    print "Energy: #{dragon.energy} "
-    print "Fun: #{dragon.fun} "
-    print "Affection: #{dragon.affection} "
-    print "Mood Report: #{dragon.mood}"
+    print "New Dragon Stats: \n"
+    print "Hunger: #{@dragon.hunger} \n"
+    print "Energy: #{@dragon.energy} \n"
+    print "Fun: #{@dragon.fun} \n"
+    print "Affection: #{@dragon.affection} \n"
+    print "Mood Report: #{@dragon.mood} \n"
 
 end
 end
-end
+
 
 
 puts StartGame.new.game

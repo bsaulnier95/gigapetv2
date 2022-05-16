@@ -1,4 +1,14 @@
+require_relative 'hunger_modify'
+require_relative 'energy_modify'
+require_relative 'fun_modify'
+require_relative 'affection_modify'
+
 class Dragon
+    include HungerModify
+    include EnergyModify
+    include FunModify
+    include AffectionModify
+
      attr_reader :mood, :hunger, :energy, :fun, :affection
     def initialize() 
       @hunger = rand(1..10)
@@ -7,10 +17,8 @@ class Dragon
       @affection = rand(1..10)
      
     end
-    
 
     def mood
-
       if @hunger > 5 || @energy < 5
         "Bad Mood"
         exit
@@ -22,19 +30,3 @@ class Dragon
     end
 
   end
-
-
-  
-
-
-
-tim = Dragon.new
-puts tim.mood.to_s
-puts tim.hunger
-puts tim.energy
-puts tim.fun
-puts tim.affection
- 
-
-
-

@@ -1,6 +1,8 @@
 require_relative 'dragon'
+#require_relative 'hunger_modify'
 
 class StartGame
+    #include HungerModify
     attr_reader :welcome, :user_input, :stat_adjustments, :game
 
 def initialize
@@ -10,7 +12,7 @@ end
 def game
     loop do 
     welcome
-    user_input
+    puts user_input
     stat_adjustments
     break if @user_input == "Quit"
     end
@@ -26,6 +28,7 @@ def welcome
     print "Fun: #{@dragon.fun} \n"
     print "Affection: #{@dragon.affection} \n"
     print "Mood Report: #{@dragon.mood}\n"
+    sleep(2)
 
 end
 
@@ -33,11 +36,12 @@ def user_input
     print "How would you like to interact with your dragon?\n"
     sleep(2)
     print "Feed, Sleep, Play, Pet, or Quit\n"
-    print "Input: \n "
+    sleep(2)
+    print "Input:\n"
     @user_input = gets.capitalize.chomp!
     if @user_input == "Quit"
         "Thank you for playing! See you next time!"
-      exit!
+        exit
     end
 end
 
@@ -50,7 +54,16 @@ def stat_adjustments
     print "Mood Report: #{@dragon.mood} \n"
 
 end
+=begin
+def hunger_modify
+    HungerModify.feed
+    HungerModify.hunger_increase
 end
+=end
+end
+
+
+
 
 
 
